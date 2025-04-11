@@ -61,7 +61,18 @@ let data = [
   },
 ];
 
-const ans=data.map((ele)=>{
-    return {movieName:ele.movieName, bestScenesDuration:ele.bestScenes.reduce((max,scene)=>parseInt(max.duration)>parseInt(scene.duration)?max:scene).duration}
-})
-console.log(ans);
+// for moviename and max duration of scene
+const ans = data.map((ele) => {
+  return {
+    movieName: ele.movieName,
+    bestScenesDuration: ele.bestScenes.reduce((max, scene) =>
+      parseInt(max.duration) > parseInt(scene.duration) ? max : scene
+    ).duration,
+  };
+});
+
+// for averaage rating of movies using reduce method 
+const avgrating=data.reduce((acc,curr)=>curr.rating+acc,0)/data.length;
+
+
+console.log(avgrating);
