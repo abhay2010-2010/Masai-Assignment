@@ -51,24 +51,22 @@ function App() {
         <button type="Submit">Add</button>
       </form>
 
-      <table className="table-auto">
+      <table className="table w-full">
         <thead className="border-inherit">
           <tr>
-            <th>id</th>
-            <th>Task</th>
-            <th>Status</th>
-            <th>Priority</th>
+            <th className="border px-4 py-4">id</th>
+            <th className="border px-4 py-4">Task</th>
+            <th className="border px-4 py-4">Status</th>
+            <th className="border px-4 py-4">Priority</th>
           </tr>
         </thead>
         {todo.map((ele, ind) => (
-          // <div  className="flex flex-row space-x-4">
-            <tbody key={ind}>
-              <td>{ind + 1}</td>
-              <td>{ele.Task}</td>
-              <td>{ele.Priority}</td>
-              <td>{ele.Status}</td>
-            </tbody>
-          // </div>
+          <tbody key={ind} className="hover:bg-amber-100">
+            <td className="border px-4 py-4">{ind + 1}</td>
+            <td className="border px-4 py-4">{ele.Task}</td>
+            <td className="border px-4 py-4">{ele.Priority}</td>
+            <td className="border px-4 py-4">{ele.Status}</td>
+          </tbody>
         ))}
       </table>
     </>
